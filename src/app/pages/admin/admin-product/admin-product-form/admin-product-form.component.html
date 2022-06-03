@@ -1,0 +1,11 @@
+<!-- Địng nghĩa biến quản lí form -->
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="">Name</label>
+        <!-- ĐỊnh nghĩa thuộc tính để lắng nghe input-->
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div>
+        <button class="btn btn-success">Submit</button>
+    </div>
+</form>

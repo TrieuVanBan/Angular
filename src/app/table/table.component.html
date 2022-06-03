@@ -1,0 +1,35 @@
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Avatar</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of teachers">
+          <td>{{teacher.id}}</td>
+          <td>
+            <app-table-name [name]="teacher.name"></app-table-name>
+          </td>
+          <td>{{teacher.age}}</td>
+          <td>{{teacher.gender ? 'Nam' : 'Nữ'}}</td>
+          <td>
+            <app-table-avatar
+              [src]="teacher.avatar"
+              [age]="teacher.age"
+            ></app-table-avatar>
+            <!-- <img src={{teacher.avatar}} alt={{teacher.name}} height="100"> -->
+            <!-- <img [src]="teacher.avatar" [alt]="teacher.name" height="100"> -->
+          </td>
+          <td>
+            <span *ngIf="teacher.status === 1">Đang làm việc</span>
+            <span *ngIf="teacher.status === 0">Đã nghỉ</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
